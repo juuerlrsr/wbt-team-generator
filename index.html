@@ -8,22 +8,52 @@
     <style>
         html, body {
             font-size: 1em;
+            background: #111;
+            color: #fff;
+            overflow: hidden;
+            height: 100%;
         }
         html, body, h1, h2, h3, h4, h5, h6, label, div, textarea {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: #333;
+            color: #fff;
+            text-shadow:3px 3px 0 rgba(0,0,0,.9);
         }
         a, a:visited, a:focus, a:hover {
-            color: #8bc34a;
+            color: #ffc933;
             text-decoration: none;
+        }
+        #cover {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111;
+            text-align: center;
+            z-index: 1000;
         }
         #header {
             text-align: center;
-            margin-bottom: 50px;
+            padding: 20px 0 30px;
+        }
+        #header h1 {
+            margin-bottom: 4px;
+        }
+        textarea {
+            background: #310c0c;
+            border: none;
+            padding: 10px;
+            margin: 30px 0;
+        }
+        textarea:focus {
+            outline: 1px solid #ffc933;
+            
         }
         #form {
             margin: 0 auto;
             width: 300px;
+            text-align: center;
         }
         #form div {
             padding: 4px;
@@ -31,18 +61,44 @@
         #team1, #team2 {
             text-align: center;
         }
+        #team1 h2, #team1 div {
+            color: #a891ff;
+        }
+        #team2 h2, #team2 div {
+            color: #ff8a8a;
+        }
         .members div {
             padding: 4px 0;
         }
-        button {
-            padding: 10px 20px;
+        .button {
+            text-shadow: none;
+            background: #ff3019; /* Old browsers */
+            background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
+            box-shadow:10px 10px 0 rgba(0,0,0,.9);
+            transition: box-shadow 0.5s;
+            display:inline-block;
+            padding:.5em 2em;
+            text-decoration:none;
+        }
+        .button:hover {
+            box-shadow: 0 0 0 rgba(0,0,0,.9);
+        }
+        .parallelogram{
+            transform: skew(-20deg);
+        }
+        .skew-fix{
+            display:inline-block;
+            transform: skew(20deg);
         }
         #options {
             text-align: center;
         }
-        #options button {
+        #options .button {
             margin-top: 100px;
-            margin-bottom: 4px;
+            margin-bottom: 30px;
         }
         @media (orientation: landscape) {
             #team1 {
@@ -57,24 +113,30 @@
     </style>
 </head>
 <body>
+    <div id="cover">
+        <h1>Weekly Team Battle 1</h1>
+    </div>
     <section id="header">
-        <h1>Weekly Team Battle - Team Generator v1.0</h1>
+        <h1>Weekly Team Battle 1</h1>
+        <small><em>WTB Team Generator v1.0.1</em></small>
     </section>
     <section id="form">
         <div>
             <h2>Participants</h2>
         </div>
-        <div>
+        <div style="display:none">
              <small><em>There must be at least 2 or more participants.</em></small>
         </div>
         <div>
             <small><em>Enter one name per line.</em></small>
         </div>
         <div>
-            <textarea name="participants" id="participants" cols="30" rows="10"></textarea>
+            <textarea spellcheck="false" name="participants" id="participants" cols="30" rows="10"></textarea>
         </div>
         </div>
-            <button id="submit">Generate Teams</button>
+            <a id="submit" class="button parallelogram" href="javascript:void(0)">
+                    <span class="skew-fix">Generate Teams</span>
+            </a>
         </div>
     </section>
     <section id="teams">
@@ -89,7 +151,9 @@
             </div>
         </div>
         <div id="options">
-            <button id="regenerate">Regenerate List</button>
+            <a id="regenerate" class="button parallelogram" href="javascript:void(0)">
+                <span class="skew-fix">Regenerate Teams</span>
+            </a>
             <div>
                 <a id="editparticipants" href="javascript:void(0)"><small>Edit Participants</small></a>
             </div>

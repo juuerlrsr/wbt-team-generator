@@ -4,6 +4,7 @@ var teams = document.getElementById('teams'),
     regenerate = document.getElementById('regenerate'),
     editparticipants = document.getElementById('editparticipants'),
     form = document.getElementById('form'),
+    cover = document.getElementById('cover'),
     team1 = document.querySelector('#team1 .captain'),
     team2 = document.querySelector('#team2 .captain'),
     team1mem = document.querySelector('#team1 .members'),
@@ -15,6 +16,10 @@ regenerate.addEventListener('click', generate);
 editparticipants.addEventListener('click', function(){
     form.style.display = 'block';
     teams.style.display = 'none';
+});
+
+cover.addEventListener('click', function(){
+    cover.style.display = 'none';
 });
 
 function generate(){
