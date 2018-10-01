@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WBT - Team Generator</title>
+    <style>
+        html, body {
+            font-size: 1em;
+        }
+        html, body, h1, h2, h3, h4, h5, h6, label, div, textarea {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #333;
+        }
+        a, a:visited, a:focus, a:hover {
+            color: #8bc34a;
+            text-decoration: none;
+        }
+        #header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #form {
+            margin: 0 auto;
+            width: 300px;
+        }
+        #form div {
+            padding: 4px;
+        }
+        #team1, #team2 {
+            text-align: center;
+        }
+        .members div {
+            padding: 4px 0;
+        }
+        button {
+            padding: 10px 20px;
+        }
+        #options {
+            text-align: center;
+        }
+        #options button {
+            margin-top: 100px;
+            margin-bottom: 4px;
+        }
+        @media (orientation: landscape) {
+            #team1 {
+                width: 50%;
+                float: left;
+            }
+            #team2 {
+                width: 50%;
+                float: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="header">
+        <h1>Weekly Team Battle - Team Generator v1.0</h1>
+    </section>
+    <section id="form">
+        <div>
+            <h2>Participants</h2>
+        </div>
+        <div>
+             <small><em>There must be at least 2 or more participants.</em></small>
+        </div>
+        <div>
+            <small><em>Enter one name per line.</em></small>
+        </div>
+        <div>
+            <textarea name="participants" id="participants" cols="30" rows="10"></textarea>
+        </div>
+        </div>
+            <button id="submit">Generate Teams</button>
+        </div>
+    </section>
+    <section id="teams">
+        <div id="team1">
+            <h2>Team <span class="captain"><span></h2>
+            <div class="members">
+            </div>
+        </div>
+        <div id="team2">
+            <h2>Team <span class="captain"><span></h2>
+            <div class="members">
+            </div>
+        </div>
+        <div id="options">
+            <button id="regenerate">Regenerate List</button>
+            <div>
+                <a id="editparticipants" href="javascript:void(0)"><small>Edit Participants</small></a>
+            </div>
+        </div>
+    </section>
+    
+    <script src="./generator.js"></script>
+</body>
+</html>
