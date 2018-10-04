@@ -101,24 +101,27 @@
             margin-bottom: 30px;
         }
         @media (orientation: landscape) {
+            #teams {
+                display: flex;
+                -webkit-flex-direction: row; 
+                flex-direction: row;
+            }
             #team1 {
-                width: 50%;
-                float: left;
+                flex: 50%;
             }
             #team2 {
-                width: 50%;
-                float: left;
+                flex: 50%;
             }
         }
     </style>
 </head>
 <body>
     <div id="cover">
-        <h1>Weekly Team Battle 1</h1>
+        <h1>Weekly Team Battle 2</h1>
     </div>
     <section id="header">
-        <h1>Weekly Team Battle 1</h1>
-        <small><em>WTB Team Generator v1.0.1</em></small>
+        <h1>Weekly Team Battle 2</h1>
+        <small><em>WTB Team Generator v1.0.2</em></small>
     </section>
     <section id="form">
         <div>
@@ -129,6 +132,9 @@
         </div>
         <div>
             <small><em>Enter one name per line.</em></small>
+        </div>
+        <div>
+            <small><em>Prefix a name with '-' to exclude from captain pool.</em></small>
         </div>
         <div>
             <textarea spellcheck="false" name="participants" id="participants" cols="30" rows="10"></textarea>
@@ -150,13 +156,14 @@
             <div class="members">
             </div>
         </div>
-        <div id="options">
-            <a id="regenerate" class="button parallelogram" href="javascript:void(0)">
-                <span class="skew-fix">Regenerate Teams</span>
-            </a>
-            <div>
-                <a id="editparticipants" href="javascript:void(0)"><small>Edit Participants</small></a>
-            </div>
+        
+    </section>
+    <section id="options">
+        <a id="regenerate" class="button parallelogram" href="javascript:void(0)">
+            <span class="skew-fix">Regenerate Teams</span>
+        </a>
+        <div>
+            <a id="editparticipants" href="javascript:void(0)"><small>Edit Participants</small></a>
         </div>
     </section>
     
