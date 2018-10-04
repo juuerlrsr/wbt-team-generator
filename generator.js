@@ -35,7 +35,7 @@ function generate(){
 
         for(var a = 0; a < plist.length; a++) {
             if(plist[a][0]=='-') {
-                plist[a] = plist[a].replace(/^-(.*)/, '$1');
+                plist[a] = plist[a].replace(/^-(.+)/, '$1');
                 exclude_me.push(plist[a]);
             }
         }
