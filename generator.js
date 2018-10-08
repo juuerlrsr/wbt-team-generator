@@ -10,12 +10,24 @@ var teams = document.getElementById('teams'),
     team2 = document.querySelector('#team2 .captain'),
     team1mem = document.querySelector('#team1 .members'),
     team2mem = document.querySelector('#team2 .members'),
+    counterspan = document.getElementById('counter'),
     exclude_me = [];
 teams.style.display = 'none';
 options.style.display = 'none';
+counterspan.style.display = 'none';
+var counter = 1;
 
-submit.addEventListener('click', generate);
-regenerate.addEventListener('click', generate);
+submit.addEventListener('click', function(){
+    counter = 1;
+    counterspan.style.display = 'none';
+    generate();
+});
+regenerate.addEventListener('click', function(){
+    counter++;
+    counterspan.style.display = 'inline';
+    counterspan.innerHTML = ' ['+counter+']';
+    generate();
+});
 editparticipants.addEventListener('click', function(){
     form.style.display = 'block';
     teams.style.display = 'none';
